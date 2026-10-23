@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 using namespace std;
 
 // int main(){    //hollow Diamond
@@ -114,28 +115,117 @@ using namespace std;
 //     return 0;
 // }
 
-int main(){     //palendrome number
+// int main(){     //palendrome number
+//     int n;
+//     cin>>n;
+//     int temp = n;
+//     int reverse = 0;
+//     while(temp != 0){
+//         reverse = reverse*10 + temp%10;
+//         temp = temp/10;
+//     }
+//     if(reverse == n ){
+//         cout<<reverse<<endl;
+//         cout<<"PALENDROME";
+//     }else{
+//         int abs_diff = n - reverse;
+//         if( abs_diff > 0){
+//             cout<<reverse<<endl;
+//             cout<<abs_diff;
+//         } 
+//         else {
+//             cout<<reverse<<endl;
+//             cout<< -1*abs_diff;
+//         }
+//     }
+//     return 0;
+// }
+
+// int main(){     //prime between l and r
+//     int l,r;
+//     int sum = 0;
+//     cin>>l>>r;
+//     bool found = false;
+//     for(int i = l; i<=r; i++){
+//         bool isprime = true;
+//         for(int j = 2; j * j <=i; j++){
+//             if(i % j ==0){
+//                 isprime = false;
+//                 break;
+//             }
+//         }
+//         if(isprime == true){
+//             cout<< i <<" ";
+//             sum +=i;
+//             found = true;
+//         }
+//     }
+//     if(!found){
+//         cout<<"NONE";
+//     }
+//     cout<<endl<<sum<<endl;
+//     return 0;
+// }
+
+// int main(){              
+//     int n,prime;
+//     cin>>n;
+//     int start = 2;
+//     int limit = 3;
+//     int count = 0;
+//     while(count != n){
+//         for(int i = start; i<=limit; i++ ){
+//             if(limit % i == 0){
+//                 prime = i;
+//                 count ++;
+//             }
+//         }
+//         limit ++;
+//     }
+//     cout<<prime;
+//     return 0;
+// }
+
+
+int main(){
     int n;
     cin>>n;
-    int temp = n;
-    int reverse = 0;
-    while(temp != 0){
-        reverse = reverse*10 + temp%10;
-        temp = temp/10;
-    }
-    if(reverse == n ){
-        cout<<reverse<<endl;
-        cout<<"PALENDROME";
-    }else{
-        int abs_diff = n - reverse;
-        if( abs_diff > 0){
-            cout<<reverse<<endl;
-            cout<<abs_diff;
-        } 
-        else {
-            cout<<reverse<<endl;
-            cout<< -1*abs_diff;
+    char c = 'A';
+    for(int i=1; i<=n-1; i++){
+        int spaces = n - i;
+        for(int sp = 1; sp <= spaces; sp++){
+            cout<<"  ";
         }
+        for(int el = 1; el <= 2*i - 1; el++){
+            if( el == 1 || el == 2*i-1){
+                cout<<i<<" ";
+            }else{
+                cout<<"  ";
+            }
+        }
+        cout<<endl;
     }
-    return 0;
+    for(int i = 1; i<=n; i++){
+        if( i == n){
+            for(int l = 1; l <= 2*i-1; l++){
+                cout<<c<<" ";
+                c++;
+            }
+        }
+    }cout<<endl;
+    for(int i = n - 1;i>=1; i-- ){
+        int spaces = n - i;
+        for(int sp = 1; sp <= spaces; sp++){
+            cout<<"  ";
+        }
+        for(int el = 1; el <= 2*i - 1; el++){
+            if( el == 1 || el == 2*i-1){
+                cout<<i<<" ";
+            }else{
+                cout<<"  ";
+            }
+        }
+        cout<<endl;
+    }
+    cout<<endl;
 }
