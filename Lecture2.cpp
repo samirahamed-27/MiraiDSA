@@ -186,46 +186,73 @@ using namespace std;
 //     return 0;
 // }
 
+// int main(){        //hollow number witn n - number
+//     int n;
+//     cin>>n;
+//     char c = 'A';
+//     for(int i=1; i<=n-1; i++){
+//         int spaces = n - i;
+//         for(int sp = 1; sp <= spaces; sp++){
+//             cout<<"  ";
+//         }
+//         for(int el = 1; el <= 2*i - 1; el++){
+//             if( el == 1 || el == 2*i-1){
+//                 cout<<i<<" ";
+//             }else{
+//                 cout<<"  ";
+//             }
+//         }
+//         cout<<endl;
+//     }
+//     for(int i = 1; i<=n; i++){
+//         if( i == n){
+//             for(int l = 1; l <= 2*i-1; l++){
+//                 cout<<c<<" ";
+//                 c++;
+//             }
+//         }
+//     }cout<<endl;
+//     for(int i = n - 1;i>=1; i-- ){
+//         int spaces = n - i;
+//         for(int sp = 1; sp <= spaces; sp++){
+//             cout<<"  ";
+//         }
+//         for(int el = 1; el <= 2*i - 1; el++){
+//             if( el == 1 || el == 2*i-1){
+//                 cout<<i<<" ";
+//             }else{
+//                 cout<<"  ";
+//             }
+//         }
+//         cout<<endl;
+//     }
+//     cout<<endl;
+// }
 
-int main(){
+int main(){            //Swastic sign (harder varient)
     int n;
     cin>>n;
-    char c = 'A';
-    for(int i=1; i<=n-1; i++){
-        int spaces = n - i;
-        for(int sp = 1; sp <= spaces; sp++){
-            cout<<"  ";
-        }
-        for(int el = 1; el <= 2*i - 1; el++){
-            if( el == 1 || el == 2*i-1){
-                cout<<i<<" ";
+    for(int i = 1; i <= n*2-1; i++){
+        for(int j = 1; j <= n*2-1; j++ ){
+            if( i == n || j == n){
+                if(i == n && j == n){
+                cout<<"O ";
+                }else{
+                    cout<<"+ ";
+                }
+            }else if(i == 1 && j>n){
+                cout<<"* ";
+            }else if(j==1 && i<n){
+                cout<<"* ";
+            }else if(i==n*2-1 && j<n){
+                cout<<"* ";
+            }else if(j==n*2-1 && i>n){
+                cout<<"* ";
             }else{
                 cout<<"  ";
             }
         }
         cout<<endl;
     }
-    for(int i = 1; i<=n; i++){
-        if( i == n){
-            for(int l = 1; l <= 2*i-1; l++){
-                cout<<c<<" ";
-                c++;
-            }
-        }
-    }cout<<endl;
-    for(int i = n - 1;i>=1; i-- ){
-        int spaces = n - i;
-        for(int sp = 1; sp <= spaces; sp++){
-            cout<<"  ";
-        }
-        for(int el = 1; el <= 2*i - 1; el++){
-            if( el == 1 || el == 2*i-1){
-                cout<<i<<" ";
-            }else{
-                cout<<"  ";
-            }
-        }
-        cout<<endl;
-    }
-    cout<<endl;
+    return 0;
 }
